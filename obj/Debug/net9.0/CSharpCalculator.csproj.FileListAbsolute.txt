@@ -1,0 +1,15 @@
+/Users/sc/Documents/Coding/repos/TS/CSharpCalculator/bin/Debug/net9.0/CSharpCalculator
+/Users/sc/Documents/Coding/repos/TS/CSharpCalculator/bin/Debug/net9.0/CSharpCalculator.deps.json
+/Users/sc/Documents/Coding/repos/TS/CSharpCalculator/bin/Debug/net9.0/CSharpCalculator.runtimeconfig.json
+/Users/sc/Documents/Coding/repos/TS/CSharpCalculator/bin/Debug/net9.0/CSharpCalculator.dll
+/Users/sc/Documents/Coding/repos/TS/CSharpCalculator/bin/Debug/net9.0/CSharpCalculator.pdb
+/Users/sc/Documents/Coding/repos/TS/CSharpCalculator/obj/Debug/net9.0/CSharpCalculator.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sc/Documents/Coding/repos/TS/CSharpCalculator/obj/Debug/net9.0/CSharpCalculator.AssemblyInfoInputs.cache
+/Users/sc/Documents/Coding/repos/TS/CSharpCalculator/obj/Debug/net9.0/CSharpCalculator.AssemblyInfo.cs
+/Users/sc/Documents/Coding/repos/TS/CSharpCalculator/obj/Debug/net9.0/CSharpCalculator.csproj.CoreCompileInputs.cache
+/Users/sc/Documents/Coding/repos/TS/CSharpCalculator/obj/Debug/net9.0/CSharpCalculator.sourcelink.json
+/Users/sc/Documents/Coding/repos/TS/CSharpCalculator/obj/Debug/net9.0/CSharpCalculator.dll
+/Users/sc/Documents/Coding/repos/TS/CSharpCalculator/obj/Debug/net9.0/refint/CSharpCalculator.dll
+/Users/sc/Documents/Coding/repos/TS/CSharpCalculator/obj/Debug/net9.0/CSharpCalculator.pdb
+/Users/sc/Documents/Coding/repos/TS/CSharpCalculator/obj/Debug/net9.0/CSharpCalculator.genruntimeconfig.cache
+/Users/sc/Documents/Coding/repos/TS/CSharpCalculator/obj/Debug/net9.0/ref/CSharpCalculator.dll

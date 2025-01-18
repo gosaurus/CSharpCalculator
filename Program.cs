@@ -9,6 +9,9 @@ namespace Calculator
             Console.WriteLine("Welcome to the calculator");
             Console.WriteLine("=========================");
 
+            Console.WriteLine("Enter your operator:");
+            string Operator = Console.ReadLine()!;
+
             Console.WriteLine("Enter your first number: ");
             string responseOne = Console.ReadLine()!;
             int numberOne = int.Parse(responseOne);
@@ -17,7 +20,24 @@ namespace Calculator
             string responseTwo = Console.ReadLine()!;
             int numberTwo = int.Parse(responseTwo);
 
-            int result = numberOne * numberTwo;
+            int result = 0;
+
+            if (Operator == "+") {
+                result = numberOne + numberTwo;
+            }
+            
+            else if (Operator == "-") {
+                result = numberOne - numberTwo;     
+            }
+
+            else if (Operator == "*") {
+                result = numberOne * numberTwo;
+            }
+
+            else if (Operator == "/") {
+                result = numberOne / numberTwo;
+            }
+
             Console.WriteLine("Your result is: " + result);
         }
     }

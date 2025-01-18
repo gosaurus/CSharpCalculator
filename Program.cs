@@ -22,6 +22,7 @@ namespace Calculator
 
             int result = 0;
 
+            /*
             if (Operator == "+") {
                 result = numberOne + numberTwo;
             }
@@ -37,7 +38,24 @@ namespace Calculator
             else if (Operator == "/") {
                 result = numberOne / numberTwo;
             }
+            */
 
+            switch(Operator)
+            {
+                case "+":
+                    result = numberOne + numberTwo;
+                    break;
+                case "-":
+                    result = numberOne - numberTwo;
+                    break;
+                case "*":
+                    result = numberOne * numberTwo;
+                    break;
+                case "/":
+                    result = numberOne / numberTwo;
+                    break;
+            }
+            
             Console.WriteLine("Your result is: " + result);
         }
     }

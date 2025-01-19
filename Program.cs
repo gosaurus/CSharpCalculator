@@ -21,18 +21,17 @@ namespace Calculator
             for (int i = 0; i < myArray.Length; i++)
             {
                 Console.WriteLine($"Enter your number {i + 1}: ");
-                string response = Console.ReadLine()!;
-                int intResponse = int.Parse(response);
+                int intResponse = int.Parse(Console.Readline())!;
                 myArray[i] = intResponse;
             }
 
-            int result = 0;
+            int result = myArray[0];
 
             //display myArray
             Console.Write("[{0}] \n", String.Join(", ", myArray));
 
             //Solution using i
-            for (int i = 0; i < myArray.Length; i++)
+            for (int i = 1; i < myArray.Length; i++)
             {
                  if (Operator == "+")
                  {
@@ -44,25 +43,11 @@ namespace Calculator
                  }
                  else if (Operator == "*")
                  {
-                    if (result > 0) 
-                    {
-                        result *= myArray[i];
-                    }
-                    else
-                    {
-                    result = myArray[i];
-                    }
+                    result *= myArray[i];
                  }
                  else if (Operator == "/")
                  {
-                    if (result > 0)
-                    {
-                        result /= myArray[i];
-                    } 
-                    else 
-                    {
-                        result = myArray[i];
-                    }
+                    result /= myArray[i];
                  }
             }
 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Calculator
 {
@@ -12,34 +12,60 @@ namespace Calculator
             Console.WriteLine("Enter your operator:");
             string Operator = Console.ReadLine()!;
 
-            Console.WriteLine("Enter your first number: ");
-            string responseOne = Console.ReadLine()!;
-            int numberOne = int.Parse(responseOne);
+            Console.WriteLine($"How many times do you want to {Operator}?");
+            string input = Console.ReadLine()!;
+            int intInput = int.Parse(input);
 
-            Console.WriteLine("Enter your second number: ");
-            string responseTwo = Console.ReadLine()!;
-            int numberTwo = int.Parse(responseTwo);
+            int[] myArray = new int[intInput];
+
+            for (int i = 0; i < myArray.Length; i++)
+            {
+                Console.WriteLine($"Enter your number {i + 1}: ");
+                string response = Console.ReadLine()!;
+                int intResponse = int.Parse(response);
+                myArray[i] = intResponse;
+            }
 
             int result = 0;
 
-            /*
-            if (Operator == "+") {
-                result = numberOne + numberTwo;
-            }
+            //display myArray
+            Console.Write("[{0}] \n", String.Join(", ", myArray));
+    
+            foreach (int element in myArray)
+            {
+                Console.WriteLine($"Element = {element}");
+                if (Operator == "+") {
+                    result += element;
+                }
+                
+                else if (Operator == "-") {
+                    result -= element;     
+                }
+
+                else if (Operator == "*") {
+                    if (result > 0)
+                    {
+                        result *= element;
+                    }
+                    else
+                    {
+                        result = element;
+                    }
+                }
+
+                else if (Operator == "/") {
+                    if (result > 0)
+                    {
+                        result /= element;
+                    }
+                    else
+                    {
+                        result = element;
+                    }
+                }
             
-            else if (Operator == "-") {
-                result = numberOne - numberTwo;     
             }
-
-            else if (Operator == "*") {
-                result = numberOne * numberTwo;
-            }
-
-            else if (Operator == "/") {
-                result = numberOne / numberTwo;
-            }
-            */
-
+            /* 
             switch(Operator)
             {
                 case "+":
@@ -55,7 +81,8 @@ namespace Calculator
                     result = numberOne / numberTwo;
                     break;
             }
-            
+            */            
+
             Console.WriteLine("Your result is: " + result);
         }
     }

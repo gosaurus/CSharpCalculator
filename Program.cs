@@ -30,7 +30,44 @@ namespace Calculator
 
             //display myArray
             Console.Write("[{0}] \n", String.Join(", ", myArray));
-    
+
+            //Solution using i
+            for (int i = 0; i < myArray.Length; i++)
+            {
+                 if (Operator == "+")
+                 {
+                    result += myArray[i];
+                 }
+                 else if (Operator == "-")
+                 {
+                    result -= myArray[i];
+                 }
+                 else if (Operator == "*")
+                 {
+                    if (result > 0) 
+                    {
+                        result *= myArray[i];
+                    }
+                    else
+                    {
+                    result = myArray[i];
+                    }
+                 }
+                 else if (Operator == "/")
+                 {
+                    if (result > 0)
+                    {
+                        result /= myArray[i];
+                    } 
+                    else 
+                    {
+                        result = myArray[i];
+                    }
+                 }
+            }
+
+            //Solution using foreach
+            /*    
             foreach (int element in myArray)
             {
                 Console.WriteLine($"Element = {element}");
@@ -65,6 +102,8 @@ namespace Calculator
                 }
             
             }
+            */ 
+
             /* 
             switch(Operator)
             {

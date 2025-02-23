@@ -6,54 +6,42 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the calculator");
-            Console.WriteLine("=========================");
+            PrintWelcomeMessage();
+            string Operator = GetOperator();
+            
+            int NumberArrayLength = CalculationTimes(Operator);
 
-            Console.WriteLine("Enter your operator:");
-            string Operator = Console.ReadLine()!;
+            int[] myNumberArray = CreateNumberArray(NumberArrayLength);
 
-            Console.WriteLine($"How many times do you want to {Operator}?");
-            string input = Console.ReadLine()!;
-            int intInput = int.Parse(input);
+            int result = myNumberArray[0];
 
-            int[] myArray = new int[intInput];
-
-            for (int i = 0; i < myArray.Length; i++)
-            {
-                Console.WriteLine($"Enter your number {i + 1}: ");
-                int intResponse = int.Parse(Console.Readline())!;
-                myArray[i] = intResponse;
-            }
-
-            int result = myArray[0];
-
-            //display myArray
-            Console.Write("[{0}] \n", String.Join(", ", myArray));
+            //display myNumberArray
+            Console.Write("[{0}] \n", String.Join(", ", myNumberArray));
 
             //Solution using i
-            for (int i = 1; i < myArray.Length; i++)
+            for (int i = 1; i < myNumberArray.Length; i++)
             {
                  if (Operator == "+")
                  {
-                    result += myArray[i];
+                    result += myNumberArray[i];
                  }
                  else if (Operator == "-")
                  {
-                    result -= myArray[i];
+                    result -= myNumberArray[i];
                  }
                  else if (Operator == "*")
                  {
-                    result *= myArray[i];
+                    result *= myNumberArray[i];
                  }
                  else if (Operator == "/")
                  {
-                    result /= myArray[i];
+                    result /= myNumberArray[i];
                  }
             }
 
             //Solution using foreach
             /*    
-            foreach (int element in myArray)
+            foreach (int element in myNumberArray)
             {
                 Console.WriteLine($"Element = {element}");
                 if (Operator == "+") {
@@ -108,6 +96,40 @@ namespace Calculator
             */            
 
             Console.WriteLine("Your result is: " + result);
+        }
+        
+        private static void PrintWelcomeMessage()
+        {
+            Console.WriteLine("Welcome to the calculator");
+            Console.WriteLine("=========================");
+        }
+
+        private static string GetOperator()
+        {
+            Console.WriteLine("Enter your operator:");
+            string Operator = Console.ReadLine()!;
+            return Operator;
+        }        
+        
+        private static int CalculationTimes(string Operator)
+        {
+            Console.WriteLine($"How many times do you want to {Operator}?");
+            string input = Console.ReadLine()!;
+            int intInput = int.Parse(input);
+            return intInput;
+        }
+       
+        private static int[] CreateNumberArray(int NumberArrayLength) 
+        {
+            int[] myNumberArray = new int[NumberArrayLength];
+            for (int i = 0; i < myNumberArray.Length; i++)
+            {
+                Console.WriteLine($"Enter your number {i + 1}: ");
+                int intResponse = int.Parse(Console.ReadLine())!;
+                myNumberArray[i] = intResponse;
+            }
+
+            return myNumberArray;
         }
     }
 }

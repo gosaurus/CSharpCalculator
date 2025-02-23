@@ -1,14 +1,24 @@
 using System;
 
 namespace Calculator
-{ class Program 
+{
+    class Program 
     {
+        enum CalculatorMode
+        {
+            NumberCalculator,
+            DateCalculator, 
+        }
         static void Main(string[] args)
         {
+            
             bool ContinueCalculator;
             do
             {
                 PrintWelcomeMessage();
+
+                PrintCalculatorModeMenu();
+                
                 string Operator = GetOperator();
                 
                 int NumberArrayLength = CalculationTimes(Operator);
@@ -29,6 +39,23 @@ namespace Calculator
             while (ContinueCalculator);
         }
     
+        private static int PrintCalculatorModeMenu()
+        {
+            Console.WriteLine("Choose the calculator mode:"); 
+            Console.WriteLine("Enter 0 for Number mode or 1 for Date mode:"); 
+
+            if (int.TryParse(Console.Readline(), out int response))
+            {
+                if (Enum.IsDefined(typeof(CalculatorMode), response) 
+                {
+                    CalculatorMode mode = (CalculatorMode) reponse;
+                    Console.Write($"You picked {mode}");
+                    return mode; 
+                }
+            }
+            Console.WriteLine("Invalid input. Please input a valid choice.");
+            return PrintCalculatorModeMenu();
+        }
         private static bool Continue()
         {
             Console.WriteLine("Do you want to continue? Y/n");
@@ -50,7 +77,11 @@ namespace Calculator
         {
             Console.WriteLine("Enter your operator:");
             string Operator = Console.ReadLine()!;
-            if ((Operator == "+") || (Operator == "-") || (Operator == "*") || (Operator == "/"))
+            if ((Operator == "+") ||
+                (Operator == "-") ||
+                (Operator == "*") ||
+                (Operator == "/")
+            )
             { 
                 return Operator;
             } 
@@ -85,7 +116,7 @@ namespace Calculator
             {
                 return parsedIntegerResponse;
             }
-            Console.WriteLine("Invalid input. Please enter a valid number greater than 0.");
+            Console.WriteLine("Invalid input. Please enter a valid number.");
             return StringInputNumber();
         }
 
